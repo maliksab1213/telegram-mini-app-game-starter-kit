@@ -1,0 +1,738 @@
+/* Bank Location Styles - Complete */
+:root {
+    --bank-primary: #1a1a2e;
+    --bank-secondary: #16213e;
+    --bank-accent: #0f3460;
+    --bank-gold: #ffd700;
+    --bank-green: #00ff88;
+    --bank-red: #ff4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bank-primary) 0%, var(--bank-secondary) 100%);
+    min-height: 100vh;
+    color: #fff;
+}
+
+#bank-app {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Screen Management */
+.bank-screen {
+    display: none;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.bank-screen.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Loading Screen */
+.loading-content,
+.error-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Top Bar with Home Button */
+.bank-top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.bank-home-btn {
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: var(--bank-gold);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.bank-home-btn:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: var(--bank-gold);
+    transform: translateY(-2px);
+}
+
+.bank-title {
+    font-size: 1.5rem;
+    color: var(--bank-gold);
+    margin: 0;
+}
+
+.bank-spacer {
+    width: 120px;
+}
+
+/* Computer Terminal */
+.bank-computer {
+    margin: 100px auto 40px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.computer-screen {
+    background: #000;
+    border: 15px solid #333;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    min-height: 500px;
+}
+
+.screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+
+.screen-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--bank-green);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--bank-green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.screen-time {
+    color: #666;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.screen-content {
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+}
+
+/* Computer Keyboard */
+.computer-keyboard {
+    margin-top: 20px;
+    background: #222;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.key {
+    width: 60px;
+    height: 40px;
+    background: #444;
+    border: 2px solid #666;
+    border-radius: 5px;
+    box-shadow: 0 3px 0 #222;
+}
+
+/* Bank Menu */
+.bank-menu {
+    color: #fff;
+}
+
+.bank-welcome {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bank-welcome h2 {
+    color: var(--bank-gold);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.bank-welcome p {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.account-status {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.status-item.inactive {
+    opacity: 0.6;
+}
+
+.status-label {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.status-value {
+    color: var(--bank-gold);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.bank-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bank-action-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.bank-action-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 215, 0, 0.3);
+    transform: translateX(5px);
+}
+
+.bank-action-btn.primary {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.bank-action-btn.primary:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: var(--bank-gold);
+}
+
+.btn-icon {
+    font-size: 2rem;
+}
+
+.btn-text {
+    flex: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.btn-detail {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Transaction Interface */
+.bank-transaction {
+    color: #fff;
+}
+
+.transaction-back {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.transaction-back:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.bank-transaction h3 {
+    color: var(--bank-gold);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.transaction-info {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row.warning {
+    color: #ff8c00;
+}
+
+.info-value {
+    font-weight: 700;
+    color: var(--bank-gold);
+}
+
+.transaction-form {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.transaction-form label {
+    display: block;
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.transaction-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.transaction-input:focus {
+    outline: none;
+    border-color: var(--bank-gold);
+}
+
+.quick-amounts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quick-amt-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quick-amt-btn:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: var(--bank-gold);
+}
+
+.fee-preview {
+    background: rgba(255, 140, 0, 0.1);
+    border: 1px solid rgba(255, 140, 0, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fee-preview p {
+    margin: 0;
+    color: #ff8c00;
+}
+
+.fee-preview strong {
+    color: var(--bank-gold);
+}
+
+.transaction-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--bank-gold), #ff8c00);
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.transaction-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+}
+
+.transaction-submit.disabled,
+.transaction-submit:disabled {
+    background: rgba(255, 255, 255, 0.1);
+    color: #666;
+    cursor: not-allowed;
+}
+
+.transaction-submit.disabled:hover,
+.transaction-submit:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Upgrade Interface */
+.upgrade-maxed {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--bank-green);
+}
+
+.upgrade-info-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.upgrade-current,
+.upgrade-next {
+    flex: 1;
+    text-align: center;
+}
+
+.upgrade-arrow {
+    font-size: 2rem;
+    color: var(--bank-gold);
+}
+
+.upgrade-label {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.upgrade-value {
+    color: var(--bank-gold);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.upgrade-capacity {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* Confirmation Modal */
+.bank-confirm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.bank-confirm-content {
+    background: var(--bank-primary);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.bank-confirm-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.bank-confirm-title {
+    color: var(--bank-gold);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.bank-confirm-message {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    white-space: pre-line;
+}
+
+.price-breakdown {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.price-breakdown div {
+    padding: 8px 0;
+    color: #ccc;
+}
+
+.total-line {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 10px;
+    padding-top: 10px !important;
+    color: var(--bank-gold) !important;
+    font-size: 1.1rem;
+}
+
+.bank-confirm-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.bank-confirm-btn {
+    flex: 1;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bank-confirm-btn.cancel {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.bank-confirm-btn.cancel:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.bank-confirm-btn.ok {
+    background: linear-gradient(135deg, var(--bank-gold), #ff8c00);
+    color: #000;
+}
+
+.bank-confirm-btn.ok:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Notification System */
+.bank-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--bank-primary);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 400px;
+    z-index: 11000;
+    transform: translateX(500px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.bank-notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.bank-notification.success {
+    border-color: var(--bank-green);
+}
+
+.bank-notification.error {
+    border-color: var(--bank-red);
+}
+
+.bank-notif-icon {
+    font-size: 2rem;
+}
+
+.bank-notif-content {
+    flex: 1;
+}
+
+.bank-notif-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.bank-notif-message {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bank-top-bar {
+        padding: 10px 15px;
+    }
+
+    .bank-title {
+        font-size: 1.2rem;
+    }
+
+    .bank-home-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .bank-spacer {
+        width: 80px;
+    }
+
+    .bank-computer {
+        margin: 80px auto 20px;
+    }
+
+    .computer-screen {
+        border-width: 10px;
+        padding: 15px;
+        min-height: 400px;
+    }
+
+    .bank-welcome h2 {
+        font-size: 1.5rem;
+    }
+
+    .quick-amounts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .upgrade-info-box {
+        flex-direction: column;
+    }
+
+    .upgrade-arrow {
+        transform: rotate(90deg);
+    }
+
+    .bank-notification {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .bank-title {
+        font-size: 1rem;
+    }
+
+    .bank-home-btn span {
+        display: none;
+    }
+
+    .bank-home-btn {
+        padding: 8px 12px;
+    }
+
+    .computer-keyboard {
+        display: none;
+    }
+
+    .account-status {
+        padding: 15px;
+    }
+
+    .status-item {
+        padding: 12px;
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .bank-action-btn {
+        padding: 15px;
+    }
+
+    .btn-icon {
+        font-size: 1.5rem;
+    }
+
+    .btn-text {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Bank - StoryVibe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/locations/bank/bank.css">
+</head>
+<body>
+    <div id="bank-app">
+        <!-- Loading Screen -->
+        <div id="bank-loading" class="bank-screen active">
+            <div class="loading-content">
+                <div class="spinner-border text-warning mb-3" role="status" style="width: 3rem; height: 3rem;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <h3 class="text-light">Connecting to Bank...</h3>
+            </div>
+        </div>
+
+        <!-- Main Bank Interface -->
+        <div id="bank-interface" class="bank-screen d-none">
+            <!-- Fixed Top Bar with Home Button -->
+            <div class="bank-top-bar">
+                <button class="bank-home-btn" id="bank-home-btn">
+                    <i class="bi bi-house-fill"></i>
+                    <span>Home</span>
+                </button>
+                <h1 class="bank-title">🏦 City Bank</h1>
+                <div class="bank-spacer"></div>
+            </div>
+
+            <!-- Computer Terminal -->
+            <div class="bank-computer">
+                <div class="computer-screen">
+                    <!-- Screen Header -->
+                    <div class="screen-header">
+                        <div class="screen-status">
+                            <span class="status-dot"></span>
+                            <span>ONLINE</span>
+                        </div>
+                        <div class="screen-time" id="screen-time">00:00</div>
+                    </div>
+
+                    <!-- Screen Content -->
+                    <div class="screen-content" id="screen-content">
+                        <!-- Content will be rendered by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Computer Keyboard -->
+                <div class="computer-keyboard">
+                    <div class="keyboard-row">
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                        <div class="key"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Screen -->
+        <div id="bank-error" class="bank-screen d-none">
+            <div class="error-content">
+                <h2 class="text-danger">🚫 Access Denied</h2>
+                <p class="text-light" id="error-message">Invalid access credentials</p>
+                <button class="btn btn-warning" onclick="window.history.back()">Go Back</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/locations/bank/bank.js"></script>
+</body>
+</html>
