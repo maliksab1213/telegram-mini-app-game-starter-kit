@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoryVibe Casino</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/locations/casino/casino.css">
+    <link rel="stylesheet" href="/locations/casino/tigervsdragon.css">
+    <link rel="stylesheet" href="/locations/casino/roulette.css">
+    <link rel="stylesheet" href="/locations/casino/blackvsred.css">
+    <link rel="stylesheet" href="/locations/casino/bankervs.css">
+</head>
+<body>
+    <!-- Casino Main View -->
+    <div class="casino-container" id="casino-main-view">
+        <div class="casino-header">
+            <button class="back-btn" id="main-back-btn">← Back to Map</button>
+            <div class="casino-title">🎰 StoryVibe Casino</div>
+            <div class="coins-display">
+                <span id="casino-user-coins">0</span>
+                <span>💰</span>
+            </div>
+        </div>
+
+        <div class="games-grid" id="games-grid">
+            <!-- Games will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Tiger vs Dragon Game View -->
+    <div class="game-container d-none" id="tigervsdragon-game-view">
+        <!-- Game content loaded by tigervsdragonscript.js -->
+    </div>
+
+    <!-- Roulette Game View -->
+    <div class="game-container d-none" id="roulette-game-view">
+        <!-- Game content loaded by roulettescript.js -->
+    </div>
+
+    <!-- Black vs Red Game View -->
+    <div class="game-container d-none" id="blackvsred-game-view">
+        <!-- Game content loaded by blackvsredscript.js -->
+    </div>
+
+    <!-- Banker vs Player Game View -->
+    <div class="game-container d-none" id="bankervs-game-view">
+        <!-- Game content loaded by bankervsscript.js -->
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="/locations/casino/casinoscript.js"></script>
+    <script src="/locations/casino/tigervsdragonscript.js"></script>
+    <script src="/locations/casino/roulettescript.js"></script>
+    <script src="/locations/casino/blackvsredscript.js"></script>
+    <script src="/locations/casino/bankervsscript.js"></script>
+</body>
+</html>
