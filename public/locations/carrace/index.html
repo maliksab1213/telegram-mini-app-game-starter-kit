@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing Track</title>
+    <link rel="stylesheet" href="/locations/carrace/carrace.css">
+</head>
+<body>
+    <div class="racing-container">
+        <!-- Header -->
+        <div class="racing-header">
+            <button class="back-btn" id="back-to-game">← Back to Map</button>
+            <div class="racing-title">🏎️ Racing Track</div>
+            <div class="coins-display">
+                <span id="user-coins">0</span>
+                <span>💰</span>
+            </div>
+        </div>
+
+        <!-- Tournament Off Message -->
+        <div class="tournament-off" id="tournament-off" style="display: none;">
+            <div class="off-icon">🚫</div>
+            <h2>Today is Off!</h2>
+            <p>No races scheduled for today. Come back tomorrow for high-speed action!</p>
+        </div>
+
+        <!-- Races Selection View -->
+        <div class="races-container" id="races-container" style="display: none;">
+            <div class="races-header">
+                <h2>📅 Today's Races</h2>
+                <p class="date-display" id="current-date"></p>
+            </div>
+
+            <div class="races-grid">
+                <!-- Race 1 -->
+                <div class="race-card" data-race="1">
+                    <div class="race-number">Race 1</div>
+                    <div class="race-time" id="round1-time">--:--</div>
+                    <div class="race-status" id="round1-status">Waiting</div>
+                    <button class="enter-race-btn" id="enter-round1">Enter Race</button>
+                </div>
+
+                <!-- Race 2 -->
+                <div class="race-card" data-race="2">
+                    <div class="race-number">Race 2</div>
+                    <div class="race-time" id="round2-time">--:--</div>
+                    <div class="race-status" id="round2-status">Waiting</div>
+                    <button class="enter-race-btn" id="enter-round2">Enter Race</button>
+                </div>
+
+                <!-- Race 3 -->
+                <div class="race-card" data-race="3">
+                    <div class="race-number">Race 3 - Final</div>
+                    <div class="race-time" id="round3-time">--:--</div>
+                    <div class="race-status" id="round3-status">Waiting</div>
+                    <button class="enter-race-btn" id="enter-round3">Enter Race</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Race View -->
+        <div class="race-view" id="race-view" style="display: none;">
+            <div class="race-header">
+                <button class="back-btn" id="back-to-races">← Back to Races</button>
+                <div class="race-title" id="race-title">Race 1</div>
+                <div class="race-countdown" id="race-countdown">00:00</div>
+            </div>
+
+            <!-- Selection Phase -->
+            <div class="selection-phase" id="selection-phase">
+                <h3>🎯 Select Your Car</h3>
+                <div class="cars-grid" id="cars-grid"></div>
+                <button class="confirm-btn" id="confirm-selection" disabled>Confirm Selection</button>
+            </div>
+
+            <!-- Race Track -->
+            <div class="race-track" id="race-track" style="display: none;">
+                <div class="track-container">
+                    <div class="start-line">START</div>
+                    <div class="track-lanes" id="track-lanes"></div>
+                    <div class="finish-line">
+                        <div class="checkered-flag">🏁</div>
+                        FINISH
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="race-results" id="race-results" style="display: none;">
+                <div class="result-icon" id="result-icon"></div>
+                <h2 id="result-title"></h2>
+                <div class="winner-info">
+                    <p>🏆 Winner: <span id="winner-name"></span></p>
+                    <p>🔢 Number: <span id="winner-number"></span></p>
+                    <p>🎨 Color: <span id="winner-color"></span></p>
+                </div>
+                <div class="user-selection-info">
+                    <p>Your Selection: <span id="user-selection-display"></span></p>
+                </div>
+                <button class="next-btn" id="next-race-btn">Next Race</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/locations/carrace/carrace.js"></script>
+</body>
+</html>
