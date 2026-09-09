@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxing Arena</title>
+    <link rel="stylesheet" href="/locations/boxing/boxing.css">
+</head>
+<body>
+    <div class="boxing-container">
+        <!-- Header -->
+        <div class="boxing-header">
+            <button class="back-btn" id="back-to-game">← Back to Map</button>
+            <div class="boxing-title">🥊 Boxing Arena</div>
+            <div class="coins-display">
+                <span id="user-coins">0</span>
+                <span>💰</span>
+            </div>
+        </div>
+
+        <!-- Tournament Off Message -->
+        <div class="tournament-off" id="tournament-off" style="display: none;">
+            <div class="off-icon">🚫</div>
+            <h2>Today is Off!</h2>
+            <p>No fights scheduled for today. Come back tomorrow for epic boxing matches!</p>
+        </div>
+
+        <!-- Fights Selection View -->
+        <div class="fights-container" id="fights-container" style="display: none;">
+            <div class="fights-header">
+                <h2>📅 Today's Fights</h2>
+                <p class="date-display" id="current-date"></p>
+            </div>
+
+            <div class="fights-grid">
+                <!-- Round 1 -->
+                <div class="fight-card" data-round="1">
+                    <div class="fight-number">Fight 1 - Semifinal</div>
+                    <div class="fight-time" id="round1-time">--:--</div>
+                    <div class="fight-status" id="round1-status">Waiting</div>
+                    <button class="enter-fight-btn" id="enter-round1">Enter Arena</button>
+                </div>
+
+                <!-- Round 2 -->
+                <div class="fight-card" data-round="2">
+                    <div class="fight-number">Fight 2 - Semifinal</div>
+                    <div class="fight-time" id="round2-time">--:--</div>
+                    <div class="fight-status" id="round2-status">Waiting</div>
+                    <button class="enter-fight-btn" id="enter-round2">Enter Arena</button>
+                </div>
+
+                <!-- Final -->
+                <div class="fight-card" data-round="3">
+                    <div class="fight-number">Final Fight - Championship</div>
+                    <div class="fight-time" id="round3-time">--:--</div>
+                    <div class="fight-status" id="round3-status">Waiting</div>
+                    <button class="enter-fight-btn" id="enter-round3">Enter Arena</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fight View -->
+        <div class="fight-view" id="fight-view" style="display: none;">
+            <div class="fight-header">
+                <button class="back-btn" id="back-to-fights">← Back to Fights</button>
+                <div class="fight-title" id="fight-title">Fight 1</div>
+                <div class="fight-countdown" id="fight-countdown">00:00</div>
+            </div>
+
+            <!-- Selection Phase -->
+            <div class="selection-phase" id="selection-phase">
+                <h3>🎯 Pick Your Champion</h3>
+                <div class="fighters-grid" id="fighters-grid"></div>
+                <button class="confirm-btn" id="confirm-selection" disabled>Confirm Selection</button>
+            </div>
+
+            <!-- Fight Ring -->
+            <div class="fight-ring" id="fight-ring" style="display: none;">
+                <div class="ring-container">
+                    <div class="ring-ropes"></div>
+                    <div class="fighters-fighting" id="fighters-fighting">
+                        <div class="fighter-left" id="fighter-left">
+                            <div class="fighter-icon">🥊</div>
+                            <div class="fighter-name"></div>
+                        </div>
+                        <div class="vs-text">VS</div>
+                        <div class="fighter-right" id="fighter-right">
+                            <div class="fighter-icon">🥊</div>
+                            <div class="fighter-name"></div>
+                        </div>
+                    </div>
+                    <div class="fight-action" id="fight-action">FIGHT!</div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="fight-results" id="fight-results" style="display: none;">
+                <div class="result-icon" id="result-icon"></div>
+                <h2 id="result-title"></h2>
+                <div class="winner-info">
+                    <p>🏆 Winner: <span id="winner-name"></span></p>
+                </div>
+                <div class="user-selection-info">
+                    <p>Your Pick: <span id="user-selection-display"></span></p>
+                </div>
+                <button class="next-btn" id="next-fight-btn">Next Fight</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/locations/boxing/boxing.js"></script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+/* Boxing Arena Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.boxing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.boxing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+}
+
+.boxing-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ff4757;
+    text-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
+}
+
+.coins-display {
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 25px;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffd700;
+}
+
+/* Tournament Off */
+.tournament-off {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.off-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.tournament-off h2 {
+    font-size: 2rem;
+    color: #ff6b6b;
+    margin-bottom: 15px;
+}
+
+.tournament-off p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* Fights Container */
+.fights-container {
+    padding: 20px;
+}
+
+.fights-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.fights-header h2 {
+    font-size: 2rem;
+    color: #ff4757;
+    margin-bottom: 10px;
+}
+
+.date-display {
+    font-size: 1.1rem;
+    color: #aaa;
+}
+
+.fights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.fight-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.fight-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+.fight-number {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ff4757;
+    margin-bottom: 15px;
+}
+
+.fight-time {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.fight-status {
+    font-size: 1rem;
+    color: #4ecdc4;
+    margin-bottom: 20px;
+    padding: 5px 15px;
+    background: rgba(78, 205, 196, 0.2);
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.fight-status.completed {
+    color: #95e1d3;
+    background: rgba(149, 225, 211, 0.2);
+}
+
+.fight-status.in-progress {
+    color: #ff8c42;
+    background: rgba(255, 140, 66, 0.2);
+    animation: pulse 1.5s infinite;
+}
+
+.enter-fight-btn {
+    background: linear-gradient(135deg, #ff4757, #c23616);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.enter-fight-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+}
+
+.enter-fight-btn:disabled {
+    background: #555;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Fight View */
+.fight-view {
+    padding: 20px;
+}
+
+.fight-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.fight-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ff4757;
+}
+
+.fight-countdown {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff8c42;
+    padding: 10px 20px;
+    background: rgba(255, 140, 66, 0.2);
+    border-radius: 25px;
+}
+
+/* Selection Phase */
+.selection-phase {
+    text-align: center;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+.selection-phase h3 {
+    font-size: 1.8rem;
+    color: #ff4757;
+    margin-bottom: 30px;
+}
+
+.fighters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.fighter-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fighter-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.fighter-card.selected {
+    background: rgba(255, 71, 87, 0.2);
+    border-color: #ff4757;
+    box-shadow: 0 0 20px rgba(255, 71, 87, 0.3);
+}
+
+.fighter-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.fighter-name {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.confirm-btn {
+    background: linear-gradient(135deg, #ff4757, #c23616);
+    border: none;
+    border-radius: 12px;
+    padding: 15px 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.confirm-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+}
+
+.confirm-btn:disabled {
+    background: #555;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Fight Ring */
+.fight-ring {
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+.ring-container {
+    position: relative;
+    min-height: 400px;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    border-radius: 15px;
+    padding: 40px;
+    border: 5px solid #e74c3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring-ropes {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    height: 60%;
+    border-top: 3px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.ring-ropes::before,
+.ring-ropes::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.ring-ropes::before {
+    top: 33%;
+}
+
+.ring-ropes::after {
+    top: 66%;
+}
+
+.fighters-fighting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    z-index: 10;
+}
+
+.fighter-left,
+.fighter-right {
+    text-align: center;
+    animation: fighting 2s infinite;
+}
+
+.fighter-left {
+    animation-delay: 0s;
+}
+
+.fighter-right {
+    animation-delay: 1s;
+}
+
+.fighter-left .fighter-icon,
+.fighter-right .fighter-icon {
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+
+.fighter-left .fighter-name,
+.fighter-right .fighter-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px 15px;
+    border-radius: 10px;
+}
+
+.vs-text {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #e74c3c;
+    text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+}
+
+.fight-action {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-weight: 800;
+    color: #e74c3c;
+    text-shadow: 0 0 30px rgba(231, 76, 60, 0.8);
+    animation: punchEffect 1.5s infinite;
+}
+
+/* Results */
+.fight-results {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+.result-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+#result-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.winner-info {
+    background: rgba(255, 71, 87, 0.1);
+    border: 2px solid rgba(255, 71, 87, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.winner-info p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.winner-info span {
+    color: #ff4757;
+    font-weight: 700;
+}
+
+.user-selection-info {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.user-selection-info span {
+    color: #4ecdc4;
+    font-weight: 700;
+}
+
+.next-btn {
+    background: linear-gradient(135deg, #ff4757, #c23616);
+    border: none;
+    border-radius: 12px;
+    padding: 15px 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.next-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes fighting {
+    0%, 100% {
+        transform: translateX(0) scale(1);
+    }
+    50% {
+        transform: translateX(10px) scale(1.1);
+    }
+}
+
+@keyframes punchEffect {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0.7;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .boxing-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .boxing-title {
+        font-size: 1.5rem;
+    }
+
+    .fights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fighters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fight-title {
+        font-size: 1.3rem;
+    }
+
+    .fighters-fighting {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .vs-text {
+        font-size: 2rem;
+    }
+}
