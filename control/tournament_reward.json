@@ -1,0 +1,28 @@
+{
+  "rewards": {
+    "round1": 1000,
+    "round2": 2000,
+    "round3": 3000
+  },
+  "bonus": {
+    "all_wins": 2000,
+    "description": "Bonus for winning all 3 rounds"
+  },
+  "labels": {
+    "horseRace": {
+      "round1": "Race 1",
+      "round2": "Race 2",
+      "round3": "Race 3"
+    },
+    "boxing": {
+      "round1": "Fight 1 - Semifinal",
+      "round2": "Fight 2 - Semifinal",
+      "round3": "Final Fight"
+    },
+    "carRace": {
+      "round1": "Race 1",
+      "round2": "Race 2",
+      "round3": "Race 3 - Final"
+    }
+  }
+}

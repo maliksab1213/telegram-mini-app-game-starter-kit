@@ -1,0 +1,23 @@
+{
+  "acceptedItems": {
+    "books": {
+      "completed_book": {
+        "basePrice": 1,
+        "pricePerWord": 0.1,
+        "description": "Sell your completed books based on word count"
+      }
+    },
+    "pens": {
+      "used_pen": {
+        "basePrice": 5,
+        "condition_multiplier": {
+          "excellent": 1,
+          "good": 0.8,
+          "fair": 0.6,
+          "poor": 0.4
+        },
+        "description": "Sell your used pens"
+      }
+    }
+  }
+}

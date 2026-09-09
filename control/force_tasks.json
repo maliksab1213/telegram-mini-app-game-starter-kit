@@ -1,0 +1,8 @@
+{
+  "forceDate": null,
+  "note": "Set forceDate to YYYY-MM-DD to apply custom tasks on that date. Tasks will merge with existing tasks.",
+  "dailyTasks": {},
+  "socialTasks": {},
+  "gamesTasks": {},
+  "otherTasks": {}
+}

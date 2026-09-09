@@ -1,0 +1,64 @@
+{
+  "levels": {
+    "1": {
+      "levelName": "Bronze Writer",
+      "requiredTasks": 0,
+      "requiredCoins": 0,
+      "rewards": { "coins": 0, "spinTickets": 0 }
+    },
+    "2": {
+      "levelName": "Silver Writer",
+      "requiredTasks": 10,
+      "requiredCoins": 5000,
+      "rewards": { "coins": 1000, "spinTickets": 3 }
+    },
+    "3": {
+      "levelName": "Gold Writer",
+      "requiredTasks": 25,
+      "requiredCoins": 15000,
+      "rewards": { "coins": 2000, "spinTickets": 3 }
+    },
+    "4": {
+      "levelName": "Platinum Writer",
+      "requiredTasks": 50,
+      "requiredCoins": 35000,
+      "rewards": { "coins": 3500, "spinTickets": 5 }
+    },
+    "5": {
+      "levelName": "Diamond Writer",
+      "requiredTasks": 80,
+      "requiredCoins": 60000,
+      "rewards": { "coins": 5000, "spinTickets": 5 }
+    },
+    "6": {
+      "levelName": "Ruby Author",
+      "requiredTasks": 120,
+      "requiredCoins": 100000,
+      "rewards": { "coins": 7500, "spinTickets": 7 }
+    },
+    "7": {
+      "levelName": "Sapphire Author",
+      "requiredTasks": 175,
+      "requiredCoins": 150000,
+      "rewards": { "coins": 10000, "spinTickets": 7 }
+    },
+    "8": {
+      "levelName": "Emerald Scribe",
+      "requiredTasks": 250,
+      "requiredCoins": 220000,
+      "rewards": { "coins": 15000, "spinTickets": 10 }
+    },
+    "9": {
+      "levelName": "Crystal Scribe",
+      "requiredTasks": 350,
+      "requiredCoins": 320000,
+      "rewards": { "coins": 20000, "spinTickets": 10 }
+    },
+    "10": {
+      "levelName": "Legend Scribe",
+      "requiredTasks": 500,
+      "requiredCoins": 500000,
+      "rewards": { "coins": 50000, "spinTickets": 15 }
+    }
+  }
+}

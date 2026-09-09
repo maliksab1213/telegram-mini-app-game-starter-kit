@@ -1,0 +1,222 @@
+{
+  "currentDate": "2025-01-23",
+  "socialTasks": {
+    "task1": {
+      "taskId": "social_youtube_20250123",
+      "name": "Subscribe YouTube Channel",
+      "description": "Subscribe to our YouTube channel to earn coins",
+      "type": "social",
+      "url": "https://youtube.com/@yourchannelhere",
+      "timer": 30,
+      "coins": 250,
+      "icon": "📺",
+      "category": "social"
+    },
+    "task2": {
+      "taskId": "social_telegram_20250123",
+      "name": "Join Telegram Channel",
+      "description": "Join our Telegram announcement channel",
+      "type": "social",
+      "url": "https://t.me/yourchannelhere",
+      "timer": 15,
+      "coins": 200,
+      "icon": "📱",
+      "category": "social"
+    },
+    "task3": {
+      "taskId": "social_watch_video_20250123",
+      "name": "Watch Tutorial Video",
+      "description": "Watch our game tutorial video completely",
+      "type": "social",
+      "url": "https://youtube.com/watch?v=examplevideo",
+      "timer": 120,
+      "coins": 300,
+      "icon": "🎬",
+      "category": "social"
+    },
+    "task4": {
+      "taskId": "social_instagram_20250123",
+      "name": "Follow on Instagram",
+      "description": "Follow our Instagram page for updates",
+      "type": "social",
+      "url": "https://instagram.com/yourpagehere",
+      "timer": 20,
+      "coins": 150,
+      "icon": "📸",
+      "category": "social"
+    }
+  },
+  "gamesTasks": {
+    "task1": {
+      "taskId": "games_football_win1_20250123",
+      "name": "Win a Football Match",
+      "description": "Win 1 football match today",
+      "type": "game",
+      "game": "football",
+      "goal": 1,
+      "coins": 200,
+      "icon": "⚽",
+      "category": "games"
+    },
+    "task2": {
+      "taskId": "games_coinflip_win3_20250123",
+      "name": "Win 3 Coin Flips",
+      "description": "Win 3 coin flip games today",
+      "type": "game",
+      "game": "coinflip",
+      "goal": 3,
+      "coins": 300,
+      "icon": "🪙",
+      "category": "games"
+    },
+    "task3": {
+      "taskId": "games_headtails_win2_20250123",
+      "name": "Win 2 Head & Tails",
+      "description": "Win 2 head & tails cricket games today",
+      "type": "game",
+      "game": "headtails",
+      "goal": 2,
+      "coins": 250,
+      "icon": "🎲",
+      "category": "games"
+    },
+    "task4": {
+      "taskId": "games_rockpaper_win5_20250123",
+      "name": "Win 5 Rock Paper Scissors",
+      "description": "Win 5 rock paper scissors games today",
+      "type": "game",
+      "game": "rockpaper",
+      "goal": 5,
+      "coins": 350,
+      "icon": "✊",
+      "category": "games"
+    },
+    "task5": {
+      "taskId": "games_glassball_win2_20250123",
+      "name": "Guess the Glass Ball",
+      "description": "Win 2 glass ball games today",
+      "type": "game",
+      "game": "glassball",
+      "goal": 2,
+      "coins": 300,
+      "icon": "🔮",
+      "category": "games"
+    },
+    "task6": {
+      "taskId": "games_holemole_win3_20250123",
+      "name": "Smash 3 Moles",
+      "description": "Win 3 smash hit games today",
+      "type": "game",
+      "game": "holemole",
+      "goal": 3,
+      "coins": 400,
+      "icon": "🔨",
+      "category": "games"
+    },
+    "task7": {
+      "taskId": "games_memory_win2_20250123",
+      "name": "Win Picture Match",
+      "description": "Win 2 picture match games today",
+      "type": "game",
+      "game": "memorygame",
+      "goal": 2,
+      "coins": 350,
+      "icon": "🧠",
+      "category": "games"
+    },
+    "task8": {
+      "taskId": "games_shootout_win1_20250123",
+      "name": "Win Penalty Shootout",
+      "description": "Win 1 penalty shootout game today",
+      "type": "game",
+      "game": "shootout",
+      "goal": 1,
+      "coins": 300,
+      "icon": "🎯",
+      "category": "games"
+    },
+    "task9": {
+      "taskId": "games_sequence_win1_20250123",
+      "name": "Win Color Sequence",
+      "description": "Win 1 color sequence game today",
+      "type": "game",
+      "game": "sequencematch",
+      "goal": 1,
+      "coins": 400,
+      "icon": "🌈",
+      "category": "games"
+    }
+  },
+  "casinoTasks": {
+    "task1": {
+      "taskId": "casino_bet500_20250123",
+      "name": "Bet 500 Coins in Casino",
+      "description": "Place a total bet of 500 coins across any casino game today",
+      "type": "casino",
+      "metric": "total_bet",
+      "goal": 500,
+      "coins": 250,
+      "icon": "🎰",
+      "category": "casino"
+    },
+    "task2": {
+      "taskId": "casino_bet1000_20250123",
+      "name": "High Roller – Bet 1000",
+      "description": "Place a total bet of 1000 coins across all casino games today",
+      "type": "casino",
+      "metric": "total_bet",
+      "goal": 1000,
+      "coins": 500,
+      "icon": "💎",
+      "category": "casino"
+    },
+    "task3": {
+      "taskId": "casino_tigerdragon_3rounds_20250123",
+      "name": "Play Tiger vs Dragon",
+      "description": "Play 3 rounds of Tiger vs Dragon today",
+      "type": "casino",
+      "game": "tigervsdragon",
+      "metric": "rounds_played",
+      "goal": 3,
+      "coins": 300,
+      "icon": "🐯",
+      "category": "casino"
+    },
+    "task4": {
+      "taskId": "casino_roulette_5rounds_20250123",
+      "name": "Spin the Roulette",
+      "description": "Play 5 rounds of Roulette today",
+      "type": "casino",
+      "game": "roulette",
+      "metric": "rounds_played",
+      "goal": 5,
+      "coins": 400,
+      "icon": "🎡",
+      "category": "casino"
+    },
+    "task5": {
+      "taskId": "casino_blackvsred_3rounds_20250123",
+      "name": "Play Black vs Red",
+      "description": "Play 3 rounds of Black vs Red today",
+      "type": "casino",
+      "game": "blackvsred",
+      "metric": "rounds_played",
+      "goal": 3,
+      "coins": 300,
+      "icon": "🃏",
+      "category": "casino"
+    },
+    "task6": {
+      "taskId": "casino_bankervs_3rounds_20250123",
+      "name": "Play Banker vs Player",
+      "description": "Play 3 rounds of Banker vs Player today",
+      "type": "casino",
+      "game": "bankervs",
+      "metric": "rounds_played",
+      "goal": 3,
+      "coins": 300,
+      "icon": "🎴",
+      "category": "casino"
+    }
+  }
+}

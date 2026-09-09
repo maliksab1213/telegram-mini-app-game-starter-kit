@@ -1,0 +1,327 @@
+{
+  "categories": {
+    "pens": {
+      "name": "Writing Pens",
+      "icon": "✏️",
+      "position": 1,
+      "items": {
+        "PEN001": {
+          "id": "PEN001",
+          "name": "Basic Pen",
+          "icon": "✏️",
+          "price": 10,
+          "description": "A simple writing pen for beginners. Writes 1-2 words per click.",
+          "quality": "basic",
+          "deliveryTime": 0,
+          "type": "pen"
+        },
+        "PEN002": {
+          "id": "PEN002",
+          "name": "Quality Pen",
+          "icon": "🖊️",
+          "price": 50,
+          "description": "A better pen that writes smoother and faster. Writes 2-3 words per click.",
+          "quality": "good",
+          "deliveryTime": 2,
+          "type": "pen"
+        },
+        "PEN003": {
+          "id": "PEN003",
+          "name": "Premium Gold Pen",
+          "icon": "🖋️",
+          "price": 200,
+          "description": "The finest writing instrument. Writes 2-4 words per click!",
+          "quality": "premium",
+          "deliveryTime": 5,
+          "type": "pen"
+        },
+        "PEN004": {
+          "id": "PEN004",
+          "name": "Diamond Pen",
+          "icon": "💎",
+          "price": 500,
+          "description": "Ultra-luxury pen with diamond tip. Writes 3-5 words per click!",
+          "quality": "luxury",
+          "deliveryTime": 10,
+          "type": "pen"
+        }
+      }
+    },
+    "books": {
+      "name": "Empty Books",
+      "icon": "📖",
+      "position": 2,
+      "items": {
+        "BOOK001": {
+          "id": "BOOK001",
+          "name": "Basic Notebook",
+          "icon": "📘",
+          "price": 20,
+          "description": "A small notebook perfect for short stories. Holds up to 50 words.",
+          "capacity": 50,
+          "currentWords": 0,
+          "deliveryTime": 0,
+          "type": "book"
+        },
+        "BOOK002": {
+          "id": "BOOK002",
+          "name": "Standard Journal",
+          "icon": "📗",
+          "price": 75,
+          "description": "A medium-sized journal for longer stories. Holds up to 200 words.",
+          "capacity": 200,
+          "currentWords": 0,
+          "deliveryTime": 3,
+          "type": "book"
+        },
+        "BOOK003": {
+          "id": "BOOK003",
+          "name": "Epic Novel Book",
+          "icon": "📕",
+          "price": 300,
+          "description": "A large book for ambitious writers. Holds up to 500 words!",
+          "capacity": 500,
+          "currentWords": 0,
+          "deliveryTime": 8,
+          "type": "book"
+        },
+        "BOOK004": {
+          "id": "BOOK004",
+          "name": "Master's Tome",
+          "icon": "📙",
+          "price": 750,
+          "description": "The ultimate writing canvas. Holds up to 1000 words!",
+          "capacity": 1000,
+          "currentWords": 0,
+          "deliveryTime": 15,
+          "type": "book"
+        },
+        "BOOK005": {
+          "id": "BOOK005",
+          "name": "Legendary Chronicle",
+          "icon": "📜",
+          "price": 1500,
+          "description": "For legendary writers only. Holds up to 2000 words!",
+          "capacity": 2000,
+          "currentWords": 0,
+          "deliveryTime": 30,
+          "type": "book"
+        }
+      }
+    },
+    "inks": {
+      "name": "Writing Inks",
+      "icon": "🖤",
+      "position": 3,
+      "items": {
+        "INK001": {
+          "id": "INK001",
+          "name": "Basic Black Ink",
+          "icon": "🖤",
+          "price": 8,
+          "description": "Standard black ink for everyday writing. Good for 30 words.",
+          "wordCapacity": 30,
+          "wordsRemaining": 30,
+          "deliveryTime": 0,
+          "type": "ink"
+        },
+        "INK002": {
+          "id": "INK002",
+          "name": "Blue Ink Bottle",
+          "icon": "🔵",
+          "price": 15,
+          "description": "Classic blue ink for professional writing. Good for 60 words.",
+          "wordCapacity": 60,
+          "wordsRemaining": 60,
+          "deliveryTime": 1,
+          "type": "ink"
+        },
+        "INK003": {
+          "id": "INK003",
+          "name": "Colored Ink Set",
+          "icon": "🎨",
+          "price": 35,
+          "description": "Vibrant colored inks for creative writing. Good for 100 words.",
+          "wordCapacity": 100,
+          "wordsRemaining": 100,
+          "deliveryTime": 2,
+          "type": "ink"
+        },
+        "INK004": {
+          "id": "INK004",
+          "name": "Golden Ink",
+          "icon": "✨",
+          "price": 150,
+          "description": "Luxurious golden ink for premium writing. Good for 250 words.",
+          "wordCapacity": 250,
+          "wordsRemaining": 250,
+          "deliveryTime": 5,
+          "type": "ink"
+        },
+        "INK005": {
+          "id": "INK005",
+          "name": "Magical Ink",
+          "icon": "🔮",
+          "price": 400,
+          "description": "Enchanted ink that never seems to run out. Good for 500 words.",
+          "wordCapacity": 500,
+          "wordsRemaining": 500,
+          "deliveryTime": 10,
+          "type": "ink"
+        },
+        "INK006": {
+          "id": "INK006",
+          "name": "Eternal Ink",
+          "icon": "♾️",
+          "price": 1000,
+          "description": "The ultimate ink for serious writers. Good for 1000 words!",
+          "wordCapacity": 1000,
+          "wordsRemaining": 1000,
+          "deliveryTime": 20,
+          "type": "ink"
+        }
+      }
+    },
+    "bagpacks": {
+      "name": "Inventory Upgrades",
+      "icon": "🎒",
+      "position": 4,
+      "items": {
+        "BP001": {
+          "id": "BP001",
+          "name": "Medium Bagpack",
+          "icon": "🎒",
+          "price": 500,
+          "description": "Upgrade your inventory to hold 20 items instead of 10.",
+          "slots": 20,
+          "deliveryTime": 0,
+          "type": "bagpack"
+        },
+        "BP002": {
+          "id": "BP002",
+          "name": "Large Bagpack",
+          "icon": "🕊️",
+          "price": 1500,
+          "description": "Upgrade your inventory to hold 35 items. Perfect for serious collectors.",
+          "slots": 35,
+          "deliveryTime": 0,
+          "type": "bagpack"
+        },
+        "BP003": {
+          "id": "BP003",
+          "name": "Master's Bag",
+          "icon": "👜",
+          "price": 5000,
+          "description": "The ultimate inventory upgrade. Holds 50 items!",
+          "slots": 50,
+          "deliveryTime": 0,
+          "type": "bagpack"
+        }
+      }
+    },
+    "powerDrinks": {
+      "name": "Travel Energy Drinks",
+      "icon": "⚡",
+      "position": 5,
+      "items": {
+        "PWRDRINK001": {
+          "id": "PWRDRINK001",
+          "name": "Mini Energy Boost",
+          "icon": "🥤",
+          "price": 30,
+          "description": "Restores 10% travel energy. Perfect for short trips.",
+          "energyRestore": 10,
+          "deliveryTime": 0,
+          "type": "powerDrink"
+        },
+        "PWRDRINK002": {
+          "id": "PWRDRINK002",
+          "name": "Energy Refresher",
+          "icon": "🥡",
+          "price": 80,
+          "description": "Restores 30% travel energy. Good for medium journeys.",
+          "energyRestore": 30,
+          "deliveryTime": 0,
+          "type": "powerDrink"
+        },
+        "PWRDRINK003": {
+          "id": "PWRDRINK003",
+          "name": "Power Energy Drink",
+          "icon": "🥂",
+          "price": 150,
+          "description": "Restores 50% travel energy. Great for long distances.",
+          "energyRestore": 50,
+          "deliveryTime": 0,
+          "type": "powerDrink"
+        },
+        "PWRDRINK004": {
+          "id": "PWRDRINK004",
+          "name": "Power Energy Drink",
+          "icon": "🥡",
+          "price": 250,
+          "description": "Restores 70% travel energy. Great for long distances.",
+          "energyRestore": 70,
+          "deliveryTime": 0,
+          "type": "powerDrink"
+        },
+        "PWRDRINK005": {
+          "id": "PWRDRINK005",
+          "name": "Full Energy Bottle",
+          "icon": "🍾",
+          "price": 300,
+          "description": "Restores 100% travel energy. Complete power restoration!",
+          "energyRestore": 100,
+          "deliveryTime": 0,
+          "type": "powerDrink"
+        }
+      }
+    },
+    "transportVehicles": {
+      "name": "Travel Vehicles",
+      "icon": "🚗",
+      "position": 6,
+      "items": {
+        "VEHC001": {
+          "id": "VEHC001",
+          "name": "City Bicycle",
+          "icon": "🚲",
+          "price": 2000,
+          "description": "Eco-friendly travel. Uses only 70% energy per trip.",
+          "energyConsumption": 70,
+          "deliveryTime": 0,
+          "type": "transportVehicle"
+        },
+        "VEHC002": {
+          "id": "VEHC002",
+          "name": "Fast Motorcycle",
+          "icon": "🏍️",
+          "price": 20000,
+          "description": "Fast and efficient. Uses only 50% energy per trip.",
+          "energyConsumption": 50,
+          "deliveryTime": 0,
+          "type": "transportVehicle"
+        },
+        "VEHC003": {
+          "id": "VEHC003",
+          "name": "Luxury Car",
+          "icon": "🚙",
+          "price": 80000,
+          "description": "Comfortable travel. Uses only 30% energy per trip.",
+          "energyConsumption": 30,
+          "deliveryTime": 0,
+          "type": "transportVehicle"
+        },
+        "VEHC004": {
+          "id": "VEHC004",
+          "name": "Elite Supercar",
+          "icon": "🏎️",
+          "price": 500000,
+          "description": "Ultimate luxury. Uses only 10% energy per trip!",
+          "energyConsumption": 10,
+          "deliveryTime": 0,
+          "type": "transportVehicle"
+        }
+      }
+    }
+  }
+}
