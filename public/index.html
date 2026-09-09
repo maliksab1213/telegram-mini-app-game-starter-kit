@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoryVibe - Write Your Story</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="stylesheet" href="/public/sections/home.css">
+    <link rel="stylesheet" href="/public/sections/games.css">
+    <link rel="stylesheet" href="/public/sections/shopping.css">
+    <link rel="stylesheet" href="/public/sections/leaderboard.css">
+    <link rel="stylesheet" href="/public/sections/settings.css">
+    <link rel="stylesheet" href="/public/core/inventory.css">
+    <link rel="stylesheet" href="/public/core/notification.css">
+    <link rel="stylesheet" href="/public/core/confirmation-modal.css">
+    <link rel="stylesheet" href="/public/sections/writestory.css">
+    <link rel="stylesheet" href="/public/sections/daily_reward.css">
+    <link rel="stylesheet" href="/public/sections/spin.css">
+    <link rel="stylesheet" href="/public/phone/phone.css">
+    <link rel="stylesheet" href="/public/phone/online_wallet.css">
+    <link rel="stylesheet" href="/public/sections/map.css">
+    <link rel="stylesheet" href="/public/sections/tournament.css">
+    <link rel="stylesheet" href="/public/phone/trading.css">
+    <link rel="stylesheet" href="/public/sections/tasks.css">
+    <link rel="stylesheet" href="/public/sections/level.css">
+</head>
+<body>
+    <div id="app" class="container-fluid p-0">
+
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="screen d-flex align-items-center justify-content-center">
+            <div class="text-center">
+                <div class="spinner-border text-warning mb-3" role="status" style="width:3rem;height:3rem;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <h3 class="text-light">Loading StoryVibe...</h3>
+            </div>
+        </div>
+
+        <!-- New User Welcome Screen -->
+        <div id="welcome-screen" class="screen d-none">
+            <div class="welcome-container">
+                <div class="welcome-card">
+                    <div class="logo-section">
+                        <div class="welcome-title">Welcome to</div>
+                        <div class="game-logo">StoryVibe</div>
+                        <div class="game-subtitle">Write Your Way to Success!</div>
+                    </div>
+                    <div class="name-input-section">
+                        <input type="text" id="new-player-name" class="name-input"
+                               placeholder="Enter your author name" maxlength="15"
+                               autocomplete="off" spellcheck="false">
+                        <div class="input-helper">Only letters &amp; spaces (3-15 characters)</div>
+                        <div id="new-name-error" class="error-message d-none"></div>
+                        <button id="continue-btn" class="continue-button" disabled>
+                            <span class="btn-text">Confirm Name</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Game Interface -->
+        <div id="game-interface" class="d-none">
+
+            <!-- Inventory Modal -->
+            <div id="inventory-modal" class="inventory-modal d-none">
+                <div class="inventory-content">
+                    <div class="inventory-header">
+                        <h3>🎒 Your Inventory</h3>
+                        <button id="close-inventory" class="close-btn">✕</button>
+                    </div>
+                    <div class="inventory-info">
+                        <span id="inventory-level">Level 1 Bagpack</span>
+                        <span id="inventory-slots">0/10 slots used</span>
+                    </div>
+                    <div id="inventory-grid" class="inventory-grid"></div>
+                </div>
+            </div>
+
+            <!-- Item Description Modal -->
+            <div id="item-description-modal" class="item-modal d-none">
+                <div class="item-modal-content">
+                    <div class="item-icon" id="item-modal-icon">📦</div>
+                    <h4 id="item-modal-name">Item Name</h4>
+                    <p id="item-modal-description">Item description here...</p>
+                    <div class="item-modal-actions">
+                        <button id="close-item-modal" class="btn btn-secondary">Close</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Write Story Modal -->
+            <div id="write-story-modal" class="write-story-modal d-none">
+                <div class="write-header">
+                    <button class="write-close-btn" id="write-close-btn">← Back</button>
+                    <div class="write-coins-display">
+                        <span class="write-coins-amount" id="write-coins">0</span>
+                        <span>💰</span>
+                    </div>
+                </div>
+                <div class="write-content">
+                    <div class="write-supplies">
+                        <div class="supply-category">
+                            <div class="supply-title">🖊 Select Pen</div>
+                            <div id="write-pens-container" class="supply-items">
+                                <div class="no-supplies">Loading...</div>
+                            </div>
+                        </div>
+                        <div class="supply-category">
+                            <div class="supply-title">📚 Select Book</div>
+                            <div id="write-books-container" class="supply-items">
+                                <div class="no-supplies">Loading...</div>
+                            </div>
+                        </div>
+                        <div class="supply-category">
+                            <div class="supply-title">🖋️ Select Ink</div>
+                            <div id="write-inks-container" class="supply-items">
+                                <div class="no-supplies">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="write-tap-area">
+                        <div class="write-status-info">
+                            <div class="write-status-item" id="write-status-book">
+                                <span class="write-status-label">Book</span>
+                                <span class="write-status-value">0/0</span>
+                            </div>
+                            <div class="write-status-item" id="write-status-ink">
+                                <span class="write-status-label">Ink</span>
+                                <span class="write-status-value">0w</span>
+                            </div>
+                        </div>
+                        <button id="write-tap-button" class="write-tap-button" disabled>
+                            <div class="write-tap-icon">✖</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notification System -->
+            <div id="notification-container" class="notification-container"></div>
+
+            <!-- Main Content Area -->
+            <div class="main-content">
+
+                <!-- HOME SECTION -->
+                <div id="home-section" class="section active">
+                    <div class="home-content">
+                        <!-- Level bar injected here by home.js -->
+
+                        <!-- Home header: inventory + coins -->
+                        <div class="home-header">
+                            <button class="home-inventory-btn" title="Open Inventory">
+                                🎒
+                                <span id="home-inventory-count" class="inventory-count" style="display:none">0</span>
+                            </button>
+                            <div class="home-coins-display">
+                                <span class="home-coins-amount" id="home-coins">0</span>
+                                <span>💰</span>
+                            </div>
+                        </div>
+
+                        <!-- Phone / Map / Tournament buttons -->
+                        <div class="utility-buttons">
+                            <button id="phone-btn" class="utility-btn">
+                                <span class="utility-icon">📱</span>
+                                <span class="utility-label">Phone</span>
+                            </button>
+                            <button id="map-btn" class="utility-btn">
+                                <span class="utility-icon">🗺️</span>
+                                <span class="utility-label">Map</span>
+                            </button>
+                            <button id="tournament-rewards-btn" class="utility-btn tournament-rewards-btn">
+                                <span class="utility-icon">🏆</span>
+                                <span class="utility-label">Rewards</span>
+                                <span id="tournament-rewards-badge" class="tournament-rewards-badge" style="display:none">NEW</span>
+                            </button>
+                        </div>
+
+                        <!-- Write Story Button -->
+                        <div class="write-story-button-container">
+                            <button id="write-story-btn" class="write-story-btn">
+                                ✍️ WRITE STORY
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REWARD + SPIN BUTTONS (home only, fixed above nav) -->
+                <div class="reward-spin-buttons">
+                    <button id="daily-reward-btn" class="reward-btn">
+                        <span>🎁</span>
+                        <span class="btn-text">Daily Rewards</span>
+                    </button>
+                    <button id="daily-spin-btn" class="spin-btn">
+                        <span>🎡</span>
+                        <span class="btn-text">Daily Spin</span>
+                    </button>
+                </div>
+
+                <!-- TASKS SECTION -->
+                <div id="tasks-section" class="section d-none">
+                    <div class="container-fluid px-3 py-4">
+                        <h2 class="section-title mb-4">📋 Daily Tasks</h2>
+                        <div id="tasks-list"></div>
+                    </div>
+                </div>
+
+                <!-- SHOPPING SECTION -->
+                <div id="shopping-section" class="section d-none">
+                    <div class="container-fluid px-3 py-4">
+                        <div class="shopping-header">
+                            <div class="shopping-top-bar">
+                                <div class="shopping-coins-display">
+                                    <span class="shopping-coins-amount" id="shopping-coins">0</span>
+                                    <span>💰</span>
+                                </div>
+                            </div>
+                            <h2>🛒 Writing Shop</h2>
+                        </div>
+                        <div id="buy-interface">
+                            <div class="categories-list" id="categories-list"></div>
+                            <div id="items-grid" class="items-grid"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEADERBOARD SECTION -->
+                <div id="leaderboard-section" class="section d-none">
+                    <div class="container-fluid px-3 py-4">
+                        <h2 class="section-title mb-4">🏆 Top Writers</h2>
+                        <div id="leaderboard-list"></div>
+                    </div>
+                </div>
+
+                <!-- SETTINGS SECTION -->
+                <div id="settings-section" class="section d-none">
+                    <div class="container-fluid px-3 py-4">
+                        <h2 class="section-title mb-4">⚙️ Settings</h2>
+                        <div id="settings-content"></div>
+                    </div>
+                </div>
+
+            </div><!-- end .main-content -->
+
+            <!-- Bottom Navigation -->
+            <div class="bottom-nav">
+                <div class="nav-container">
+                    <button class="nav-item active" data-section="home">
+                        <i class="bi bi-house-fill"></i>
+                        <span>Write</span>
+                    </button>
+                    <button class="nav-item" data-section="tasks">
+                        <i class="bi bi-list-task"></i>
+                        <span>Tasks</span>
+                    </button>
+                    <button class="nav-item" data-section="shopping">
+                        <i class="bi bi-shop"></i>
+                        <span>Shop</span>
+                    </button>
+                    <button class="nav-item" data-section="leaderboard">
+                        <i class="bi bi-trophy"></i>
+                        <span>Leaders</span>
+                    </button>
+                    <button class="nav-item" data-section="settings">
+                        <i class="bi bi-gear"></i>
+                        <span>Settings</span>
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- end #game-interface -->
+
+        <!-- Error Screen -->
+        <div id="error-screen" class="screen d-none">
+            <div class="text-center">
+                <h2 class="text-danger">📚 Oops!</h2>
+                <p class="text-light" id="error-message">Something went wrong. Please try again.</p>
+                <button class="btn btn-warning" onclick="location.reload()">Restart</button>
+            </div>
+        </div>
+
+    </div><!-- end #app -->
+
+    <!-- ── Scripts ──────────────────────────────────────────────── -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/core/game-manager.js"></script>
+    <script src="/public/core/inventory-manager.js"></script>
+    <script src="/public/core/notification-system.js"></script>
+    <script src="/public/sections/home.js"></script>
+    <script src="/public/phone/phone.js"></script>
+    <script src="/public/phone/online_wallet.js"></script>
+    <script src="/public/sections/mapsystem.js"></script>
+    <script src="/public/phone/tradingapp.js"></script>
+    <script src="/public/sections/tournamentscript.js"></script>
+    <script src="/public/sections/writestory.js"></script>
+    <script src="/public/sections/daily_reward.js"></script>
+    <script src="/public/sections/spin.js"></script>
+    <script src="/public/sections/level.js"></script>
+    <script src="/public/sections/tasks.js"></script>
+    <script src="/public/sections/shopping.js"></script>
+    <script src="/public/sections/leaderboard.js"></script>
+    <script src="/public/sections/settings.js"></script>
+    <script src="/public/core/app.js"></script>
+    <script src="/public/core/confirmation-modal.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Phone button
+        document.getElementById('phone-btn')?.addEventListener('click', () => {
+            window.phoneInstance?.open();
+        });
+
+        // Map button
+        document.getElementById('map-btn')?.addEventListener('click', () => {
+            window.mapInstance?.open();
+        });
+
+        // Tournament rewards button
+        document.getElementById('tournament-rewards-btn')?.addEventListener('click', () => {
+            if (!window.tournamentRewardsInstance)
+                window.tournamentRewardsInstance = new window.TournamentRewardsInterface();
+            window.tournamentRewardsInstance.open();
+        });
+
+        checkTournamentRewardsBadge();
+    });
+
+    async function checkTournamentRewardsBadge() {
+        try {
+            const p   = new URLSearchParams(window.location.search);
+            const uid = p.get('uid'); const token = p.get('token');
+            if (!uid || !token) return;
+
+            const res = await fetch(`/api/tournament/has-uncollected?uid=${uid}&token=${token}`, { cache: 'no-store' });
+            if (!res.ok) return;
+            const data  = await res.json();
+            const badge = document.getElementById('tournament-rewards-badge');
+            if (data.hasUncollected && badge) {
+                badge.style.display = 'block';
+                badge.textContent   = data.count || 'NEW';
+            }
+        } catch (e) {
+            console.error('Badge check error:', e);
+        }
+    }
+    </script>
+</body>
+</html>
