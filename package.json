@@ -1,0 +1,30 @@
+{
+  "name": "telegram-mini-app-game-starter-kit",
+  "version": "1.0.0",
+  "description": "Free open-source Telegram Mini App game starter kit — Node.js + SQLite backend with tap-to-earn core loop, wallet, shop, casino mini-games, tournaments, leaderboard, daily rewards, and more.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "telegram",
+    "telegram-bot",
+    "telegram-mini-app",
+    "telegram-webapp",
+    "telegram-game",
+    "tap-to-earn",
+    "clicker-game",
+    "nodejs",
+    "sqlite",
+    "starter-kit",
+    "game-template"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "node-telegram-bot-api": "^0.66.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
