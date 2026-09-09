@@ -1,0 +1,12 @@
+{
+  "ngrok": {
+    "enabled": false,
+    "auth_token": "",
+    "base_url": "",
+    "change_url": true,
+    "monitor_interval": 60,
+    "retry_attempts": 3,
+    "retry_delay": 5
+  },
+  "switchdomain": true
+}

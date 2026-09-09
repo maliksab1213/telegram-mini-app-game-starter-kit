@@ -1,0 +1,35 @@
+{
+  "bot": {
+    "token": "",
+    "name": "RichVibe",
+    "username": ""
+  },
+  "server": {
+    "domain": "",
+    "port": 3000,
+    "secret_key": ""
+  },
+  "demomode": true,
+  "commands": {
+    "start": {
+      "description": "🎮 Welcome to Tap Coin Game! Start your journey and earn coins by tapping!",
+      "button_text": "🎮 Start Game"
+    },
+    "play": {
+      "description": "💰 Ready to play? Tap the button below to start earning coins!",
+      "button_text": "▶️ Play Now"
+    }
+  },
+  "messages": {
+    "welcome": "Welcome to Tap Coin Game! 🎮\n\nTap coins, earn rewards, and climb the leaderboard!\n\nClick the button below to start playing:",
+    "play_prompt": "🎮 Ready to earn some coins?\n\nTap the play button to start your coin collecting adventure!",
+    "access_denied": "❌ Access denied. Use the bot to get your game link.",
+    "server_error": "❌ Error loading game. Please try again.",
+    "server_running": "✅ Server running. Use /start in Telegram bot."
+  },
+  "game": {
+    "name": "💰 Tap Coin Game",
+    "max_name_length": 20,
+    "allowed_name_pattern": "^[a-zA-Z\\s]+$"
+  }
+}
