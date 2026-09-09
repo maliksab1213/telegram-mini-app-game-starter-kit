@@ -1,0 +1,356 @@
+/* Tournament Rewards Interface */
+.tournament-rewards-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.tournament-rewards-modal.d-none {
+    display: none !important;
+}
+
+/* Header */
+.tournament-rewards-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.tournament-rewards-close {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tournament-rewards-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.tournament-rewards-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.tournament-rewards-coins {
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 25px;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffd700;
+}
+
+/* Content */
+.tournament-rewards-content {
+    flex: 1;
+    padding: 30px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* No Tournament */
+.tournament-rewards-empty {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.tournament-rewards-empty-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.tournament-rewards-empty h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.tournament-rewards-empty p {
+    font-size: 1.1rem;
+    color: #aaa;
+}
+
+/* Tournament Info */
+.tournament-info {
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.tournament-info-type {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.tournament-info-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffd700;
+    margin-bottom: 5px;
+}
+
+.tournament-info-date {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+/* Rewards Grid */
+.tournament-rewards-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.reward-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.reward-box:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 215, 0, 0.4);
+}
+
+.reward-box.win {
+    border-color: rgba(78, 205, 196, 0.5);
+    background: rgba(78, 205, 196, 0.1);
+}
+
+.reward-box.loss {
+    border-color: rgba(255, 107, 107, 0.5);
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.reward-box.miss {
+    border-color: rgba(150, 150, 150, 0.5);
+    background: rgba(150, 150, 150, 0.1);
+}
+
+.reward-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.reward-round-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffd700;
+}
+
+.reward-prize {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #4ecdc4;
+}
+
+.reward-status {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.reward-status.pending {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+.reward-status.in-progress {
+    background: rgba(255, 140, 66, 0.2);
+    color: #ff8c42;
+    animation: pulse 1.5s infinite;
+}
+
+.reward-status.completed {
+    background: rgba(78, 205, 196, 0.2);
+    color: #4ecdc4;
+}
+
+.reward-user-choice {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.reward-user-choice-label {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.reward-user-choice-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.reward-collect-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reward-collect-btn.can-collect {
+    background: linear-gradient(135deg, #4ecdc4, #44a08d);
+    color: #fff;
+}
+
+.reward-collect-btn.can-collect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+}
+
+.reward-collect-btn.collected {
+    background: #555;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.reward-collect-btn.loss {
+    background: rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+    cursor: not-allowed;
+}
+
+.reward-collect-btn.miss {
+    background: rgba(150, 150, 150, 0.3);
+    color: #999;
+    cursor: not-allowed;
+}
+
+.reward-collect-btn.waiting {
+    background: rgba(255, 193, 7, 0.3);
+    color: #ffc107;
+    cursor: not-allowed;
+}
+
+/* Bonus Section */
+.bonus-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 140, 0, 0.2));
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.bonus-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.bonus-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.bonus-amount {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #4ecdc4;
+    margin-bottom: 10px;
+}
+
+.bonus-description {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.bonus-collect-btn {
+    margin-top: 20px;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bonus-collect-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.bonus-collect-btn:disabled {
+    background: #555;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tournament-rewards-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .tournament-rewards-title {
+        font-size: 1.5rem;
+    }
+
+    .tournament-rewards-content {
+        padding: 20px 15px;
+    }
+
+    .reward-box {
+        padding: 20px;
+    }
+}

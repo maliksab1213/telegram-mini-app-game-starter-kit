@@ -1,0 +1,122 @@
+/* FILE: public/sections/tasks.css */
+
+.tasks-container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+/* ── Tabs ──────────────────────────────────────────────────────── */
+.task-categories {
+    display: flex; gap: 10px; margin-bottom: 20px;
+    overflow-x: auto; padding: 4px 0; scrollbar-width: none;
+}
+.task-categories::-webkit-scrollbar { display: none; }
+.task-category {
+    background: rgba(255,255,255,.05); border: 2px solid rgba(255,255,255,.1);
+    border-radius: 20px; padding: 10px 18px; font-size: .88rem; font-weight: 700;
+    color: #ccc; cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: all .25s;
+}
+.task-category:hover { background: rgba(255,255,255,.1); border-color: rgba(255,215,0,.4); }
+.task-category.active {
+    background: linear-gradient(135deg,#ffd700,#ff8c00);
+    border-color: transparent; color: #000;
+    box-shadow: 0 4px 15px rgba(255,215,0,.3);
+}
+
+/* ── Grid & Card ───────────────────────────────────────────────── */
+.tasks-grid { display: grid; gap: 14px; }
+.task-card {
+    background: linear-gradient(135deg,rgba(26,26,46,.95),rgba(22,33,62,.95));
+    border: 2px solid rgba(255,255,255,.1); border-radius: 18px;
+    padding: 18px; position: relative; overflow: hidden;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.task-card::before {
+    content:''; position:absolute; left:0; top:0;
+    width:4px; height:100%;
+    background: linear-gradient(180deg,#ffd700,#ff8c00);
+    opacity:0; transition: opacity .25s;
+}
+.task-card:hover { transform: translateY(-3px); border-color: rgba(255,215,0,.35); box-shadow: 0 6px 22px rgba(255,215,0,.18); }
+.task-card:hover::before { opacity:1; }
+
+/* Completed (not yet collected) — green glow */
+.task-card.completed { border-color: rgba(76,175,80,.5); background: linear-gradient(135deg,rgba(76,175,80,.08),rgba(22,33,62,.95)); }
+.task-card.completed::before { background: linear-gradient(180deg,#4caf50,#2e7d32); opacity:1; }
+
+/* Claimed/collected — dimmed */
+.task-card.claimed { opacity:.5; }
+
+/* ── Card content ──────────────────────────────────────────────── */
+.task-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+.task-icon { font-size:2.2rem; }
+.task-reward { background:rgba(255,215,0,.15); border:1px solid rgba(255,215,0,.35); border-radius:20px; padding:5px 14px; font-size:.9rem; font-weight:700; color:#ffd700; }
+.task-title { font-size:1.05rem; font-weight:700; color:#fff; margin-bottom:6px; }
+.task-description { font-size:.88rem; color:#999; line-height:1.5; margin-bottom:10px; }
+
+/* ── Progress bar ──────────────────────────────────────────────── */
+.task-progress { margin-top:10px; }
+.task-progress-bar { height:8px; background:rgba(255,255,255,.1); border-radius:10px; overflow:hidden; margin-bottom:6px; }
+.task-progress-fill { height:100%; background:linear-gradient(90deg,#ffd700,#ff8c00); border-radius:10px; transition:width .5s ease; box-shadow:0 0 8px rgba(255,215,0,.45); }
+.task-status { display:flex; justify-content:space-between; font-size:.82rem; color:#888; font-weight:600; }
+
+/* ── Buttons — shared base ─────────────────────────────────────── */
+.task-button {
+    width:100%; border:none; border-radius:12px;
+    padding:13px 18px; font-size:.95rem; font-weight:700;
+    cursor:pointer; transition:all .25s;
+    display:flex; align-items:center; justify-content:center;
+    gap:7px; text-transform:uppercase; letter-spacing:.5px; margin-top:14px;
+}
+
+/* Gold pulsing — Collect Coins */
+.task-button.btn-collect {
+    background: linear-gradient(135deg,#ffd700,#ff8c00);
+    color:#000;
+    box-shadow: 0 4px 15px rgba(255,215,0,.4);
+    animation: pulse-gold 1.8s infinite;
+}
+.task-button.btn-collect:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(255,215,0,.6); animation:none; }
+.task-button.btn-collect:active { transform:translateY(0); }
+
+@keyframes pulse-gold {
+    0%,100% { box-shadow: 0 4px 15px rgba(255,215,0,.35); }
+    50%      { box-shadow: 0 4px 28px rgba(255,215,0,.7); }
+}
+
+/* Green dimmed — already Collected */
+.task-button.btn-collected {
+    background: rgba(76,175,80,.18);
+    border: 2px solid rgba(76,175,80,.35);
+    color: #4caf50;
+    cursor: default;
+    opacity: .8;
+}
+
+/* Purple — Start Task */
+.task-button.btn-start {
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    color:#fff;
+    box-shadow: 0 4px 14px rgba(102,126,234,.3);
+}
+.task-button.btn-start:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(102,126,234,.5); }
+
+/* Grey — waiting / in-progress / countdown */
+.task-button.btn-waiting {
+    background: rgba(255,255,255,.06);
+    color: #666;
+    cursor: not-allowed;
+    font-size: .88rem;
+    letter-spacing: 0;
+}
+
+/* ── Empty state ───────────────────────────────────────────────── */
+.tasks-empty { text-align:center; padding:60px 20px; color:#666; }
+.tasks-empty h3 { font-size:1.2rem; color:#aaa; margin:14px 0 8px; }
+.tasks-empty p { font-size:.9rem; line-height:1.5; }
+
+/* ── Responsive ────────────────────────────────────────────────── */
+@media (max-width:480px) {
+    .tasks-container { padding:12px; }
+    .task-category { padding:8px 14px; font-size:.8rem; }
+    .task-card { padding:14px; }
+    .task-icon { font-size:1.9rem; }
+    .task-button { padding:12px 14px; font-size:.88rem; }
+}

@@ -1,0 +1,323 @@
+/* ═══════════════════════════════════════════
+   LEADERBOARD — Matches home.css dark/gold theme
+   ═══════════════════════════════════════════ */
+
+#leaderboard-section {
+    padding: 16px;
+    min-height: calc(100vh - 140px);
+}
+
+/* ── Loading ── */
+.lb-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+    gap: 16px;
+}
+
+.lb-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255,215,0,0.2);
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    animation: lb-spin 0.8s linear infinite;
+}
+
+@keyframes lb-spin { to { transform: rotate(360deg); } }
+
+/* ── Header ── */
+.lb-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.lb-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+.lb-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* ═══════════════════════════════
+   PODIUM
+   ═══════════════════════════════ */
+.lb-podium {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding: 0 8px;
+}
+
+.lb-podium-item {
+    flex: 1;
+    max-width: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Crown above 1st */
+.lb-crown {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+    animation: lb-float 2.5s ease-in-out infinite;
+}
+
+@keyframes lb-float {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(-5px); }
+}
+
+/* Avatars */
+.lb-podium-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 2px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.lb-podium-avatar-first {
+    width: 64px;
+    height: 64px;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 16px rgba(255,215,0,0.4);
+}
+
+.lb-podium-name {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lb-podium-level {
+    font-size: 0.7rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.lb-podium-coins {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
+/* Podium bases */
+.lb-podium-base {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 4px;
+}
+
+.lb-podium-base-1 {
+    height: 70px;
+    background: linear-gradient(135deg, rgba(255,215,0,0.3), rgba(255,140,0,0.2));
+    border: 1px solid rgba(255,215,0,0.4);
+}
+
+.lb-podium-base-2 {
+    height: 52px;
+    background: linear-gradient(135deg, rgba(192,192,192,0.2), rgba(160,160,160,0.1));
+    border: 1px solid rgba(192,192,192,0.3);
+}
+
+.lb-podium-base-3 {
+    height: 38px;
+    background: linear-gradient(135deg, rgba(205,127,50,0.2), rgba(160,82,45,0.1));
+    border: 1px solid rgba(205,127,50,0.3);
+}
+
+.lb-medal { font-size: 1.2rem; }
+
+/* ═══════════════════════════════
+   LIST ROWS (rank 4+)
+   ═══════════════════════════════ */
+.lb-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.lb-row {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+.lb-row:hover {
+    border-color: rgba(255,215,0,0.25);
+    transform: translateX(2px);
+}
+
+/* Highlighted — current user */
+.lb-me {
+    background: linear-gradient(135deg, rgba(255,215,0,0.12), rgba(255,140,0,0.08));
+    border-color: rgba(255,215,0,0.45) !important;
+    box-shadow: 0 0 14px rgba(255,215,0,0.1);
+}
+
+.lb-row-rank {
+    width: 32px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.lb-row-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--secondary-bg);
+    border: 1.5px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.lb-row-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.lb-row-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lb-row-meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 3px;
+}
+
+.lb-row-level {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.lb-row-coins {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* "You" tag */
+.lb-you-tag {
+    display: inline-block;
+    background: var(--accent-gradient);
+    color: #000;
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 8px;
+    vertical-align: middle;
+    margin-left: 4px;
+    letter-spacing: 0.04em;
+}
+
+/* ── Avatar letter ── */
+.lb-avatar-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+    border-radius: 50%;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* ── User divider ── */
+.lb-user-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0 10px;
+}
+
+.lb-user-divider::before,
+.lb-user-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,215,0,0.25);
+}
+
+.lb-user-divider span {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+.lb-user-card {
+    margin-bottom: 24px;
+}
+
+/* ── Podium "me" highlight ── */
+.lb-podium-item.lb-me .lb-podium-avatar {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 12px rgba(255,215,0,0.4);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .lb-podium { gap: 6px; padding: 0; }
+    .lb-podium-avatar { width: 44px; height: 44px; }
+    .lb-podium-avatar-first { width: 56px; height: 56px; }
+    .lb-podium-name { font-size: 0.72rem; }
+    .lb-podium-coins { display: none; }
+    .lb-row { padding: 10px 12px; gap: 10px; }
+}
