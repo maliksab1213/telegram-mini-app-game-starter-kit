@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Restricted</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 25%, #2d1810 50%, #1a1a1a 75%, #0f0f0f 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 140, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
+            animation: particleFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(20px) rotate(240deg); }
+        }
+
+        .warning-container {
+            max-width: 450px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .warning-card {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #ffd700, #ff8c00, #b8860b, #ffd700) 1;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 215, 0, 0.2),
+                0 0 50px rgba(255, 215, 0, 0.1);
+            animation: cardGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes cardGlow {
+            0% { box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 215, 0, 0.2), 0 0 30px rgba(255, 215, 0, 0.1); }
+            100% { box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 215, 0, 0.3), 0 0 50px rgba(255, 215, 0, 0.2); }
+        }
+
+        .warning-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: warningPulse 2s ease-in-out infinite;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+        }
+
+        @keyframes warningPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .warning-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffb347 50%, #ff8c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .warning-message {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .bot-info {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .bot-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 8px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+        }
+
+        .bot-username {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-family: 'Courier New', monospace;
+        }
+
+        .telegram-button {
+            width: 100%;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #0088cc 0%, #005580 100%);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 
+                0 10px 25px rgba(0, 136, 204, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .telegram-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .telegram-button:hover::before {
+            left: 100%;
+        }
+
+        .telegram-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 15px 35px rgba(0, 136, 204, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #0099dd 0%, #006699 100%);
+        }
+
+        .telegram-button:active {
+            transform: translateY(-1px);
+            box-shadow: 
+                0 8px 20px rgba(0, 136, 204, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .telegram-icon {
+            font-size: 1.5rem;
+            animation: telegramFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes telegramFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .warning-footer {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+        }
+
+        @media (max-width: 576px) {
+            .warning-card {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+            
+            .warning-title {
+                font-size: 1.6rem;
+            }
+            
+            .warning-icon {
+                font-size: 3rem;
+            }
+            
+            .warning-message {
+                font-size: 1rem;
+            }
+            
+            .telegram-button {
+                padding: 16px 20px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="warning-container">
+        <div class="warning-card">
+            <div class="warning-icon">⚠️</div>
+            <h1 class="warning-title">Access Restricted</h1>
+            <p class="warning-message">
+                This game can only be accessed through our official Telegram bot for security and authentication purposes.
+            </p>
+            
+            <div class="bot-info">
+                <div class="bot-name">{{BOT_NAME}}</div>
+                <div class="bot-username">@{{BOT_USERNAME}}</div>
+            </div>
+            
+            <button class="telegram-button" onclick="openTelegram()">
+                <span class="telegram-icon">✈️</span>
+                <span>Open in Telegram</span>
+            </button>
+            
+            <div class="warning-footer">
+                Secure • Verified • Official
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTelegram() {
+            const button = event.target.closest('.telegram-button');
+            const botUsername = '{{BOT_USERNAME}}';
+            const telegramUrl = `https://t.me/${botUsername}`;
+            
+            button.innerHTML = '<span class="telegram-icon">📱</span><span>Opening Telegram...</span>';
+            button.style.background = 'linear-gradient(135deg, #00aa00 0%, #008800 100%)';
+            
+            setTimeout(() => {
+                button.innerHTML = '<span class="telegram-icon">✈️</span><span>Open in Telegram</span>';
+                button.style.background = 'linear-gradient(135deg, #0088cc 0%, #005580 100%)';
+            }, 2000);
+            
+            window.open(telegramUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
