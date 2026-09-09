@@ -1,0 +1,151 @@
+/* Phone Interface Styles */
+.phone-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.phone-device {
+    background: #000;
+    border-radius: 35px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    width: 100%;
+    max-width: 380px;
+    height: 90vh;
+    max-height: 750px;
+    display: flex;
+    flex-direction: column;
+    border: 8px solid #1a1a1a;
+    position: relative;
+}
+
+/* Status Bar */
+.phone-status-bar {
+    background: #000;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 0.75rem;
+    border-bottom: 1px solid #222;
+}
+
+.status-left, .status-right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Phone Screen */
+.phone-screen {
+    flex: 1;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    padding: 15px;
+}
+
+.phone-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.phone-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Apps Grid */
+.phone-apps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 50px 10px 20px;
+}
+
+.phone-app-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.phone-app-icon:active {
+    transform: scale(0.95);
+}
+
+.app-icon {
+    width: 65px;
+    height: 65px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.phone-app-icon:hover .app-icon {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.app-name {
+    font-size: 0.75rem;
+    color: #fff;
+    text-align: center;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* App Content Area */
+.phone-app-content {
+    padding: 50px 10px 20px;
+    min-height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .phone-device {
+        max-width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        border: none;
+    }
+    
+    .phone-modal {
+        padding: 0;
+    }
+}
