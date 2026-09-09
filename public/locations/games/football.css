@@ -1,0 +1,178 @@
+/* Football Game Styles - Compact Version */
+
+#football-game-view {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#football-game-container {
+    background: #1a1a1a;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Compact Scoreboard */
+.game-scoreboard {
+    background: rgba(0,0,0,0.6);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.score-compact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    gap: 10px;
+}
+
+.score-compact span {
+    white-space: nowrap;
+}
+
+#timer-display {
+    color: #3498db;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.score-compact strong {
+    color: #4ecdc4;
+    font-size: 1.1rem;
+}
+
+#game-status {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #2ecc71;
+    min-height: 18px;
+}
+
+/* Canvas */
+#football-canvas {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    background: #2d5016;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    touch-action: none;
+    user-select: none;
+}
+
+/* Control Buttons - Compact */
+.control-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.control-buttons button {
+    flex: 1;
+    padding: 15px;
+    font-size: 20px;
+    background: linear-gradient(145deg, #3498db, #2980b9);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.control-buttons button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Match Info */
+.match-info {
+    text-align: center;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.match-info h3 {
+    color: #4ecdc4;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #football-game-view {
+        padding: 10px;
+    }
+
+    #football-game-container {
+        padding: 8px;
+    }
+
+    .game-scoreboard {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+
+    .score-compact {
+        gap: 5px;
+    }
+
+    #timer-display {
+        font-size: 0.8rem;
+    }
+
+    .score-compact strong {
+        font-size: 1rem;
+    }
+
+    .control-buttons {
+        padding: 0 5px;
+        gap: 8px;
+    }
+
+    .control-buttons button {
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .match-info {
+        padding: 20px;
+    }
+
+    .match-info h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #football-canvas {
+        border-width: 2px;
+    }
+
+    .game-scoreboard {
+        font-size: 0.7rem;
+        padding: 5px 8px;
+    }
+
+    .control-buttons button {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .match-info {
+        padding: 15px;
+    }
+}

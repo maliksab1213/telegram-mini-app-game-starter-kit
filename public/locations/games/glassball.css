@@ -1,0 +1,176 @@
+/* Glass Ball Game Styles - public/locations/games/glassball.css */
+
+#phaser-game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+#phaser-game-container canvas {
+    border-radius: 15px;
+    max-width: 100%;
+    height: auto;
+}
+
+#game-timer {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 15px 30px;
+    display: inline-block;
+    margin: 20px auto;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+}
+
+#timer-value {
+    font-size: 2rem;
+    color: #ffd700;
+    font-weight: 900;
+}
+
+/* Result Animations */
+.result-display {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    margin: 20px 0;
+    animation: fadeInScale 0.5s ease;
+}
+
+@keyframes fadeInScale {
+    0% { 
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% { 
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.result-text.win {
+    color: #4ecdc4;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 0 0 20px rgba(78, 205, 196, 0.8);
+    animation: winPulse 1s ease infinite;
+}
+
+.result-text.lose {
+    color: #ff6b6b;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+}
+
+@keyframes winPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Instructions styling */
+.instructions {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    border: 2px solid rgba(78, 205, 196, 0.3);
+}
+
+.instructions h3 {
+    color: #4ecdc4;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+}
+
+.instructions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.instructions li {
+    color: #fff;
+    font-size: 1rem;
+    margin: 10px 0;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 4px solid #4ecdc4;
+    transition: all 0.3s ease;
+}
+
+.instructions li:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* Game Stats */
+.game-stats {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(44, 62, 80, 0.2));
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(78, 205, 196, 0.3);
+    text-align: center;
+}
+
+.game-stats h3 {
+    color: #4ecdc4;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #phaser-game-container {
+        max-width: 100%;
+    }
+
+    .result-text.win,
+    .result-text.lose {
+        font-size: 2rem;
+    }
+
+    .instructions li {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    #game-timer {
+        font-size: 1.2rem;
+    }
+
+    #timer-value {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-area {
+        padding: 15px;
+    }
+
+    .result-text.win,
+    .result-text.lose {
+        font-size: 1.5rem;
+    }
+
+    .instructions h3 {
+        font-size: 1.1rem;
+    }
+
+    .instructions li {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+}

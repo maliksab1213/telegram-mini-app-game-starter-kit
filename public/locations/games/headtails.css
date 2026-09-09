@@ -1,0 +1,484 @@
+/* Head & Tails Cricket Game Styles */
+
+/* Toss Screen */
+.toss-screen {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.toss-screen h3 {
+    font-size: 1.5rem;
+    color: #4ecdc4;
+    margin-bottom: 10px;
+}
+
+.toss-screen p {
+    font-size: 1.1rem;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.toss-choices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.toss-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.toss-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #4ecdc4;
+    transform: translateY(-5px);
+}
+
+.toss-icon {
+    font-size: 4rem;
+}
+
+.toss-label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Toss Result */
+.toss-result {
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.toss-result h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Choose Action Screen */
+.choose-action-screen {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.choose-action-screen h3 {
+    font-size: 1.5rem;
+    color: #4ecdc4;
+    margin-bottom: 30px;
+}
+
+.action-choices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.action-btn-choice {
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.action-btn-choice:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #4ecdc4;
+    transform: translateY(-5px);
+}
+
+.action-icon {
+    font-size: 4rem;
+}
+
+.action-label {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Action Result */
+.action-result {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.action-result h3 {
+    font-size: 1.5rem;
+    color: #4ecdc4;
+    margin-bottom: 20px;
+}
+
+.action-display {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.action-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Gameplay Screen */
+.gameplay-screen {
+    padding: 20px;
+}
+
+.inning-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.inning-header h3 {
+    font-size: 1.5rem;
+    color: #4ecdc4;
+    margin-bottom: 10px;
+}
+
+.target-display {
+    font-size: 1.1rem;
+    color: #ffd700;
+    font-weight: 600;
+}
+
+/* Scoreboard */
+.scoreboard {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score-side {
+    flex: 1;
+}
+
+.team-label {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.score-big {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #4ecdc4;
+}
+
+.over-info {
+    text-align: right;
+}
+
+.over-label {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.over-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.balls-left {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Ball Result Area */
+#ball-result-area {
+    min-height: 120px;
+    margin: 20px 0;
+}
+
+.ball-result {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.ball-numbers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.ball-number-display {
+    text-align: center;
+}
+
+.ball-label {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.ball-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.vs-ball {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4ecdc4;
+}
+
+.ball-outcome {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.ball-outcome.out {
+    background: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+}
+
+.ball-outcome.runs {
+    background: rgba(78, 205, 196, 0.2);
+    color: #4ecdc4;
+}
+
+/* Game Instruction */
+.game-instruction {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Number Grid */
+.number-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.number-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.number-box:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #4ecdc4;
+    transform: scale(1.05);
+}
+
+.number-box.selected {
+    background: rgba(78, 205, 196, 0.3);
+    border-color: #4ecdc4;
+    box-shadow: 0 0 15px rgba(78, 205, 196, 0.5);
+}
+
+.number-box.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Inning End */
+.inning-end {
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.inning-end h3 {
+    font-size: 1.5rem;
+    color: #4ecdc4;
+    margin-bottom: 20px;
+}
+
+.final-score {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 20px 0;
+}
+
+.reason-text {
+    font-size: 1.1rem;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.target-info {
+    font-size: 1.2rem;
+    color: #ffd700;
+    font-weight: 600;
+}
+
+/* Result Screen */
+.result-screen {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.result-header {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    animation: resultShow 0.5s ease;
+}
+
+.result-header.win {
+    color: #4ecdc4;
+}
+
+.result-header.lose {
+    color: #ff6b6b;
+}
+
+.result-header.tie {
+    color: #ffd700;
+}
+
+.final-scores {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.final-score-item {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.final-label {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.final-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #4ecdc4;
+    margin-bottom: 10px;
+}
+
+.final-team {
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes resultShow {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .scoreboard {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .over-info {
+        text-align: center;
+    }
+
+    .number-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .number-box {
+        padding: 20px 10px;
+        font-size: 1.5rem;
+    }
+
+    .final-scores {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .score-big {
+        font-size: 2rem;
+    }
+
+    .ball-value {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .result-header {
+        font-size: 2rem;
+    }
+
+    .toss-icon, .action-icon {
+        font-size: 3rem;
+    }
+}

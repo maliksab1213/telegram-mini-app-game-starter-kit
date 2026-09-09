@@ -1,0 +1,315 @@
+/* ═══════════════════════════════════════════
+   SEQUENCE MATCH — Pure CSS Professional UI
+   ═══════════════════════════════════════════ */
+
+.game-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(0,0,0,0.35);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.challenge-badge {
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+}
+
+.message-box {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(0,0,0,0.3);
+    padding: 10px 16px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(255,255,255,0.07);
+}
+
+/* ══════════════════════════════════════
+   COLOR GRID — Fixed pixel size, no images
+   ══════════════════════════════════════ */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 12px;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.color-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.12s ease, filter 0.12s ease, box-shadow 0.12s ease;
+    border: 2px solid rgba(255,255,255,0.18);
+}
+
+/* Hide images — pure CSS colors used */
+.color-box img {
+    display: none !important;
+}
+
+/* Shine gloss on top-left */
+.color-box::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    width: 38%;
+    height: 28%;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    filter: blur(5px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Color definitions */
+.color-box[data-color="red"] {
+    background: radial-gradient(circle at 35% 35%, #ff6b6b, #c0392b);
+    box-shadow: 0 4px 14px rgba(192,57,43,0.55);
+}
+.color-box[data-color="yellow"] {
+    background: radial-gradient(circle at 35% 35%, #ffe66d, #e67e22);
+    box-shadow: 0 4px 14px rgba(230,126,34,0.55);
+}
+.color-box[data-color="green"] {
+    background: radial-gradient(circle at 35% 35%, #6bcb77, #1e8449);
+    box-shadow: 0 4px 14px rgba(30,132,73,0.55);
+}
+.color-box[data-color="blue"] {
+    background: radial-gradient(circle at 35% 35%, #74b9ff, #1a6fa3);
+    box-shadow: 0 4px 14px rgba(26,111,163,0.55);
+}
+.color-box[data-color="purple"] {
+    background: radial-gradient(circle at 35% 35%, #b39ddb, #6a1b9a);
+    box-shadow: 0 4px 14px rgba(106,27,154,0.55);
+}
+.color-box[data-color="pink"] {
+    background: radial-gradient(circle at 35% 35%, #ff9ff3, #d81b8e);
+    box-shadow: 0 4px 14px rgba(216,27,142,0.55);
+}
+.color-box[data-color="brown"] {
+    background: radial-gradient(circle at 35% 35%, #d4956a, #6d3a1f);
+    box-shadow: 0 4px 14px rgba(109,58,31,0.55);
+}
+
+/* GLOW state — JS adds .glowing class */
+.color-box.glowing {
+    transform: scale(1.14) !important;
+    filter: brightness(1.6) saturate(1.4);
+    border-color: rgba(255,255,255,0.95);
+    box-shadow:
+        0 0 0 3px rgba(255,255,255,0.45),
+        0 0 22px rgba(255,255,255,0.55),
+        0 0 45px rgba(255,255,255,0.2) !important;
+    z-index: 5;
+}
+
+.color-box:active {
+    transform: scale(0.91);
+}
+
+/* ══════════════════════════
+   Loading Screen
+   ══════════════════════════ */
+.loading-screen {
+    text-align: center;
+    padding: 30px 20px;
+}
+.loading-screen h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.loading-bar {
+    width: 100%;
+    max-width: 300px;
+    height: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    margin: 0 auto 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.loading-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #4ecdc4, #44a08d);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+#loadingPercent {
+    font-size: 1.2rem;
+    color: #4ecdc4;
+    font-weight: 700;
+}
+
+/* ══════════════════════════
+   Ready Screen
+   ══════════════════════════ */
+.ready-screen {
+    text-align: center;
+    padding: 28px 18px;
+}
+.ready-screen h2 {
+    color: #4ecdc4;
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+}
+.ready-screen p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+    margin-bottom: 22px;
+    line-height: 1.6;
+}
+
+/* ══════════════════════════
+   Challenge Select
+   ══════════════════════════ */
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 16px 0;
+}
+.challenge-card {
+    background: rgba(255,255,255,0.07);
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 18px 10px;
+    text-align: center;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+.challenge-card:hover {
+    background: rgba(255,255,255,0.13);
+    border-color: rgba(255,255,255,0.35);
+    transform: translateY(-4px);
+}
+.challenge-icon  { font-size: 2.4rem; margin-bottom: 8px; }
+.challenge-name  { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 5px; }
+.challenge-desc  { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+.challenge-btn {
+    background: linear-gradient(135deg, #4ecdc4, #44a08d);
+    border: none;
+    border-radius: 10px;
+    padding: 9px 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.25s;
+    width: 100%;
+}
+.challenge-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(78,205,196,0.4);
+}
+
+/* ══════════════════════════
+   Result Screen
+   ══════════════════════════ */
+.result-display {
+    text-align: center;
+    padding: 24px 20px;
+    background: rgba(0,0,0,0.45);
+    border-radius: 18px;
+    margin: 14px 0;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.result-text         { font-size: 2rem; font-weight: 800; margin-bottom: 14px; }
+.result-text.win     { color: #4ecdc4; }
+.result-text.lose    { color: #ff6b6b; }
+.result-stats        { display: flex; justify-content: center; gap: 36px; margin-top: 14px; }
+.result-stat         { text-align: center; }
+.result-label        { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+.result-value        { font-size: 1.7rem; font-weight: 700; color: #fff; }
+
+/* ══════════════════════════
+   Buttons
+   ══════════════════════════ */
+.action-btn {
+    background: linear-gradient(135deg, #4ecdc4, #44a08d);
+    border: none;
+    border-radius: 14px;
+    padding: 14px 32px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.25s;
+    width: 100%;
+    max-width: 320px;
+    margin: 12px auto 0;
+    display: block;
+}
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(78,205,196,0.45);
+}
+
+/* ══════════════════════════
+   Cooldown
+   ══════════════════════════ */
+.cooldown-notice {
+    background: rgba(255,107,107,0.15);
+    border: 1.5px solid rgba(255,107,107,0.45);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    margin: 18px 0;
+}
+.cooldown-notice h3 { color: #ff6b6b; font-size: 1.1rem; margin-bottom: 8px; }
+.cooldown-notice p  { color: rgba(255,255,255,0.85); font-size: 0.95rem; }
+
+/* ══════════════════════════
+   Responsive
+   ══════════════════════════ */
+@media (max-width: 480px) {
+    .color-grid {
+        grid-template-columns: repeat(3, 68px);
+        grid-template-rows: repeat(3, 68px);
+        gap: 9px;
+    }
+    .color-box { width: 68px; height: 68px; }
+    .challenges-grid { grid-template-columns: 1fr; }
+    .result-stats    { flex-direction: column; gap: 14px; }
+    .message-box     { font-size: 1rem; }
+    .result-text     { font-size: 1.7rem; }
+}
